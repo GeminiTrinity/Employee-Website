@@ -1,0 +1,32 @@
+body {
+    background-color: #1A0121;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.card-body, .team-heading {
+    background-color: #5B0C70;
+}
+
+.card-body, .card-header {
+    border-color: #1A0121;
+    border-width: 10px;
+}
+
+.card-header {
+    background-color: #9F76AB;
+}
+
+.employee-card {
+    margin: 5px;
+    margin-top: 30px;
+    border: 0px;
+}
+
+.list-group-item {
+    background-color: #e5acf8;
+}
+
+.text-center {
+    color: white;
+    font-size: 60px;
+}
