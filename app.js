@@ -36,12 +36,12 @@ var questions = [
     {
         name: "officeNumber",
         type: "input",
-        message: "Please enter the Manager's number. (skip if not applicable)",
+        message: "Please enter the Manager's number. (Enter as xxx-xxx-xxxx) (skip if not applicable)",
     },
     {
         name: "gitHub",
         type: "input",
-        message: "Please enter the Engineer's GitHub link. (skip if not applicable)",
+        message: "Please enter the Engineer's GitHub link. (Enter as www.______.com) (skip if not applicable)",
     },
     {
         name: "school",
