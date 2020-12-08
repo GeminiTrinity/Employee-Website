@@ -11,15 +11,11 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 const render = require("./lib/htmlRenderer");
 const { create } = require("domain");
 
-
-// Write code to use inquirer to gather information about the development team members,
-// and to create objects for each team member (using the correct classes as blueprints!)
-
 var questions = [
     {
-        name: "position",
+        name: "role",
         type: "list",
-        message: "What is the employee's position?",
+        message: "What is the employee's role?",
         choices: ["Manager", "Engineer", "Intern"]
     },
     {
@@ -76,34 +72,33 @@ function init() {
                     answer.officeNumber
                 );
                 employeeArray.push(newEmployee);
+            } else if (answer.role === "Engineer") {
+                const newEmployee = new Engineer(
+                    answer.name,
+                    answer.id,
+                    answer.email,
+                    answer.gitHub
+                );
+                employeeArray.push(newEmployee);
+            } else if (answer.role === "Intern") {
+                const newEmployee = new Intern(
+                    answer.name,
+                    answer.id,
+                    answer.email,
+                    answer.school
+                );
+                employeeArray.push(newEmployee)
             }
-            else if (answer.role === "Engineer") {
-                    const newEmployee = new Engineer(
-                        answer.name,
-                        answer.id,
-                        answer.email,
-                        answer.gitHub
-                    );
-                    employeeArray.push(newEmployee);
-            }
-            else if (answer.role === "Intern") {
-                    const newEmployee = new Intern(
-                        answer.name,
-                        answer.id,
-                        answer.email,
-                        answer.school
-                    );
-                    employeeArray.push(newEmployee)
-            }
-
             if (answer.more === true) {
                 askQuestions();
             } else {
-            const createHTML = render(employees);
-
-            fs.writeFile(outputPath, createHTML, {}, (err) =>
-            err ? console.log(err) : console.log("File created successfully!"))
-            }
+            const renderedHTML = render(employeeArray);
+            fs.writeFile(outputPath, renderedHTML, {}, (err) =>
+            err ? console.log(err) : console.log("File created successfully!")
+            )}
         })
     }
+    askQuestions();
 }
+
+init();
