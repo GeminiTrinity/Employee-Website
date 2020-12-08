@@ -55,15 +55,14 @@ var questions = [
     }
 ]
 
-// After the user has input all employees desired, call the `render` function (required
-// above) and pass in an array containing all employee objects; the `render` function will
-// generate and return a block of HTML including templated divs for each employee!
-
+// Holds all employees created
 employeeArray = [];
 
 function init() {
     const askQuestions = () => {
         inquirer.prompt(questions).then((answer) => {
+            
+            // Creates a Manager card
             if (answer.role === "Manager") {
                 const newEmployee = new Manager(
                     answer.name,
@@ -72,6 +71,8 @@ function init() {
                     answer.officeNumber
                 );
                 employeeArray.push(newEmployee);
+
+            // Creates an Engineer card
             } else if (answer.role === "Engineer") {
                 const newEmployee = new Engineer(
                     answer.name,
@@ -80,6 +81,8 @@ function init() {
                     answer.gitHub
                 );
                 employeeArray.push(newEmployee);
+
+            // Creates an Intern card
             } else if (answer.role === "Intern") {
                 const newEmployee = new Intern(
                     answer.name,
@@ -89,6 +92,8 @@ function init() {
                 );
                 employeeArray.push(newEmployee)
             }
+
+            // Runs through questions until there are no more employee cards to create 
             if (answer.more === true) {
                 askQuestions();
             } else {
