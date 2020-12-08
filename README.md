@@ -13,7 +13,6 @@
 
 ## Description: 
 Answer a few questions to generate your very own team-orientated website. It'll include managers, engineers, and interns as well as their names, numbers, emails, and specific data pertaining to their roles!
-> https://geminitrinity.github.io/TeamSite/
 
 ---
 
