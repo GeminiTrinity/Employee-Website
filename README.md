@@ -24,6 +24,7 @@ Answer a few questions to generate your very own team-orientated website. It'll 
 
 ## How to Use:
 After downloading the needed files, open up app.js. In the terminal, type "node app.js" and answer the corresponding questions.
+> Instructional Video: https://youtu.be/PDMhUqcvbqw
 
 ---
 
